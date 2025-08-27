@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { testimonialThumbs } from '../data/brand'
 
 const quotes = [
   'What is yours will find you ✨',
@@ -23,8 +24,8 @@ const Testimonials = () => {
         </div>
         <div className="mt-6 overflow-x-auto" ref={ref}>
           <div className="flex gap-4 min-w-max">
-            {[1,2,3,4].map(n => (
-              <img key={n} className="h-32 w-28 rounded-xl object-cover border border-[color:var(--lavender)]/40" src={`https://picsum.photos/seed/rev${n}/200/260`} alt="review screenshot" />
+            {testimonialThumbs.map((src, idx) => (
+              <img key={idx} className="h-32 w-28 rounded-xl object-cover border border-[color:var(--lavender)]/40" src={src} alt="review screenshot" />
             ))}
           </div>
         </div>

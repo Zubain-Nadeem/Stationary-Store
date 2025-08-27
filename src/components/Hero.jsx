@@ -1,22 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-
-const slides = [
-  {
-    title: 'Feminine & Minimally Curated Stationery 💕',
-    subtitle: 'Notebooks, planners and pens you will love',
-    image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1400&auto=format&fit=crop',
-  },
-  {
-    title: 'Stay focused, stay gentle',
-    subtitle: 'Soft pastels that calm and inspire',
-    image: 'https://images.unsplash.com/photo-1521120413309-42e7eadaf06b?q=80&w=1400&auto=format&fit=crop',
-  },
-  {
-    title: 'Pens & Accessories',
-    subtitle: 'Curated tools for your daily notes',
-    image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1400&auto=format&fit=crop',
-  },
-]
+import { heroSlides as slides } from '../data/brand'
 
 const Hero = () => {
   const [index, setIndex] = useState(0)

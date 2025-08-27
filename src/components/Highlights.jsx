@@ -1,19 +1,5 @@
 import React from 'react'
-
-const items = [
-  {
-    title: 'Study Made On',
-    image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop',
-  },
-  {
-    title: 'Gel Pens',
-    image: 'https://images.unsplash.com/photo-1523365280197-f1783db9fe62?q=80&w=1200&auto=format&fit=crop',
-  },
-  {
-    title: 'Daily Planner',
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop',
-  },
-]
+import { highlightItems as items } from '../data/brand'
 
 const Highlights = () => {
   return (
