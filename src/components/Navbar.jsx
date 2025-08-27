@@ -1,0 +1,53 @@
+import React from 'react'
+
+const Icon = ({ name, className }) => {
+  const common = 'w-5 h-5';
+  if (name === 'search') return (
+    <svg className={`${common} ${className}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21 21l-4.35-4.35m1.35-5.65a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+  );
+  if (name === 'cart') return (
+    <svg className={`${common} ${className}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 3h2l.4 2M7 13h10l3-7H6.4M7 13L5.4 5M7 13l-2 9m12-9l2 9M10 21a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+  );
+  if (name === 'instagram') return (
+    <svg className={`${common} ${className}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="5" ry="5" strokeWidth="1.5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" strokeWidth="1.5"></path><circle cx="17.5" cy="6.5" r="1.25" fill="currentColor"></circle></svg>
+  );
+  return null;
+}
+
+const Navbar = () => {
+  const navItems = ['Home','Shop','Bestsellers','Offers','Reviews','Contact']
+  return (
+    <header className="sticky top-4 z-50">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="card-soft rounded-2xl border border-[color:var(--color-lavender)]/40 bg-cream/90 backdrop-blur supports-[backdrop-filter]:bg-cream/70">
+          <div className="flex items-center justify-between gap-4 px-5 py-3">
+            <div className="flex items-center gap-3">
+              <div className="h-8 w-8 rounded-lg bg-pink/20" />
+              <span className="text-xl font-semibold tracking-wide text-heading">dear me stationery</span>
+            </div>
+            <nav className="hidden md:flex items-center gap-6 text-subtle text-sm">
+              {navItems.map(item => (
+                <a key={item} href="#" className="hover:text-heading transition-colors">{item}</a>
+              ))}
+            </nav>
+            <div className="flex items-center gap-4 text-heading">
+              <button aria-label="Search" className="p-2 rounded-lg hover:bg-lavender/40">
+                <Icon name="search" />
+              </button>
+              <button aria-label="Cart" className="p-2 rounded-lg hover:bg-lavender/40">
+                <Icon name="cart" />
+              </button>
+              <a aria-label="Instagram" href="https://www.instagram.com/shop.dearme/" target="_blank" rel="noreferrer" className="p-2 rounded-lg hover:bg-lavender/40">
+                <Icon name="instagram" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  )
+}
+
+export default Navbar
+
+
