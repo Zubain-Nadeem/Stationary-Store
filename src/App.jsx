@@ -8,7 +8,7 @@ import Footer from './components/Footer'
 
 const App = () => {
   return (
-    <div className="min-h-dvh bg-cream">
+    <div className="min-h-dvh" style={{backgroundColor:'var(--cream)'}}>
       <Navbar />
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Hero />

@@ -15,16 +15,16 @@ const Testimonials = () => {
   }, [])
   return (
     <section className="py-10">
-      <div className="rounded-2xl border border-[color:var(--color-lavender)]/50 bg-white p-6 sm:p-8 card-soft">
+      <div className="rounded-2xl border border-[color:var(--lavender)]/50 bg-white p-6 sm:p-8 shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
         <div className="flex items-center justify-between">
           <span className="text-pink-600">✦</span>
-          <p className="text-center text-lg sm:text-xl text-heading">{quotes[i]}</p>
+          <p className="text-center text-lg sm:text-xl" style={{color:'var(--charcoal)'}}>{quotes[i]}</p>
           <span className="text-pink-600">✦</span>
         </div>
         <div className="mt-6 overflow-x-auto" ref={ref}>
           <div className="flex gap-4 min-w-max">
             {[1,2,3,4].map(n => (
-              <img key={n} className="h-32 w-28 rounded-xl object-cover border border-[color:var(--color-lavender)]/40" src={`https://picsum.photos/seed/rev${n}/200/260`} alt="review screenshot" />
+              <img key={n} className="h-32 w-28 rounded-xl object-cover border border-[color:var(--lavender)]/40" src={`https://picsum.photos/seed/rev${n}/200/260`} alt="review screenshot" />
             ))}
           </div>
         </div>

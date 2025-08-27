@@ -1,29 +1,15 @@
 @import "tailwindcss";
 
-@theme {
-  --color-beige: #F5EDE3;
-  --color-cream: #FFFDF9;
-  --color-lavender: #D8CBEF;
-  --color-blue: #C6D9F7;
-  --color-pink: #E7B8C6;
-  --color-charcoal: #444444;
-  --color-softgray: #777777;
+:root {
+  --beige: #F5EDE3;
+  --cream: #FFFDF9;
+  --lavender: #D8CBEF;
+  --blue: #C6D9F7;
+  --pink: #E7B8C6;
+  --charcoal: #444444;
+  --softgray: #777777;
+  color-scheme: light;
 }
 
-/* Tailwind v4 custom utilities */
-@utility text-heading { color: var(--color-charcoal); }
-@utility text-subtle { color: var(--color-softgray); }
-@utility bg-cream { background-color: var(--color-cream); }
-@utility bg-beige { background-color: var(--color-beige); }
-@utility bg-lavender { background-color: var(--color-lavender); }
-@utility bg-pink { background-color: var(--color-pink); }
-@utility bg-blue { background-color: var(--color-blue); }
-@utility card-soft { box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
-@utility btn { @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium transition-transform duration-200; }
-@utility btn-primary { color: #fff; background-color: var(--color-pink); box-shadow: 0 8px 24px rgba(231,184,198,0.5); }
-@utility btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 28px rgba(231,184,198,0.6); }
-
-:root { color-scheme: light; }
-
 html, body, #root { height: 100%; }
-body { @apply bg-cream text-heading; }
+body { background-color: var(--cream); color: var(--charcoal); }
