@@ -1,4 +1,5 @@
 import React from 'react'
+import Logo from "../assets/images/logo.jpg"
 
 const Icon = ({ name, className }) => {
   const common = 'w-5 h-5';
@@ -23,21 +24,22 @@ const Navbar = () => {
           <div className="flex items-center justify-between gap-4 px-5 py-3">
             <div className="flex items-center gap-3">
               <div className="h-8 w-8 rounded-lg bg-[color:var(--pink)]/20" />
+
               <span className="text-xl font-semibold tracking-wide" style={{color:'var(--charcoal)'}}>dear me stationery</span>
             </div>
             <nav className="hidden md:flex items-center gap-6 text-sm" style={{color:'var(--softgray)'}}>
               {navItems.map(item => (
-                <a key={item} href="#" className="transition-colors hover:text-[color:var(--charcoal)]">{item}</a>
+                <a key={item} href="#" className="transition-colors hover:text-[color:var(--charcoal)] hover:underline underline-offset-4">{item}</a>
               ))}
             </nav>
             <div className="flex items-center gap-4" style={{color:'var(--charcoal)'}}>
-              <button aria-label="Search" className="p-2 rounded-lg hover:bg-[color:var(--lavender)]/40">
+              <button aria-label="Search" className="p-2 rounded-lg hover:bg-[color:var(--lavender)]/40 transition-colors">
                 <Icon name="search" />
               </button>
-              <button aria-label="Cart" className="p-2 rounded-lg hover:bg-[color:var(--lavender)]/40">
+              <button aria-label="Cart" className="p-2 rounded-lg hover:bg-[color:var(--lavender)]/40 transition-colors">
                 <Icon name="cart" />
               </button>
-              <a aria-label="Instagram" href="https://www.instagram.com/shop.dearme/" target="_blank" rel="noreferrer" className="p-2 rounded-lg hover:bg-[color:var(--lavender)]/40">
+              <a aria-label="Instagram" href="https://www.instagram.com/shop.dearme/" target="_blank" rel="noreferrer" className="p-2 rounded-lg hover:bg-[color:var(--lavender)]/40 transition-colors">
                 <Icon name="instagram" />
               </a>
             </div>

@@ -15,10 +15,13 @@ const Hero = () => {
   return (
     <section className="mt-8 sm:mt-12 mb-12">
       <div className="relative overflow-hidden rounded-3xl border border-[color:var(--lavender)]/40 shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
+        <div className="pointer-events-none absolute -left-10 -top-10 h-56 w-56 rounded-full bg-[color:var(--pink)]/30 blur-3xl" />
+        <div className="pointer-events-none absolute -right-10 top-16 h-56 w-56 rounded-full bg-[color:var(--blue)]/30 blur-3xl" />
         <div className="absolute inset-0 bg-gradient-to-r from-[color:var(--beige)] via-transparent to-[color:var(--lavender)]/50" />
         <img src={current.image} alt="Stationery hero" className="h-[360px] w-full object-cover sm:h-[480px]" />
         <div className="absolute inset-0 flex items-center">
           <div className="px-6 sm:px-12">
+            <span className="mb-3 inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 text-xs font-medium backdrop-blur"><span className="h-2 w-2 rounded-full bg-[color:var(--pink)]"></span> New arrivals just in</span>
             <h1 className="text-3xl sm:text-5xl font-semibold max-w-2xl drop-shadow" style={{color:'var(--charcoal)'}}>{current.title}</h1>
             <p className="mt-3 max-w-xl" style={{color:'var(--softgray)'}}>{current.subtitle}</p>
             <div className="mt-6 flex gap-3">

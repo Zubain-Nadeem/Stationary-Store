@@ -10,9 +10,13 @@ const Highlights = () => {
             <div className="relative">
               <img src={item.image} alt={item.title} className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-[rgba(245,237,227,0.8)] to-transparent" />
+              <span className="absolute left-3 top-3 rounded-full bg-white/80 px-2 py-1 text-xs font-medium">Bestseller</span>
             </div>
             <div className="flex items-center justify-between p-4">
-              <h3 className="font-medium" style={{color:'var(--charcoal)'}}>{item.title}</h3>
+              <div>
+                <h3 className="font-medium" style={{color:'var(--charcoal)'}}>{item.title}</h3>
+                <p className="text-sm" style={{color:'var(--softgray)'}}>from ₹299</p>
+              </div>
               <button className="inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium transition-transform duration-200 bg-[color:var(--lavender)]/60 hover:-translate-y-0.5" style={{color:'var(--charcoal)'}}>View</button>
             </div>
           </article>
