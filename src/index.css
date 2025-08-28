@@ -2,10 +2,13 @@
 
 :root {
   --beige: #F5EDE3;
-  --cream: #FFFDF9;
+  --cream: #FFF9F9;
   --lavender: #D8CBEF;
   --blue: #C6D9F7;
   --pink: #E7B8C6;
+  --dark-pink: #D294A9;
+  --light-pink: #F9E4EC;
+  --warm-pink: #FFCCD5;
   --charcoal: #444444;
   --softgray: #777777;
   color-scheme: light;

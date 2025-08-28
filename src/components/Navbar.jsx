@@ -20,26 +20,25 @@ const Navbar = () => {
   return (
     <header className="sticky top-4 z-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-2xl border border-[color:var(--lavender)]/40 bg-[color:var(--cream)]/90 backdrop-blur supports-[backdrop-filter]:bg-[color:var(--cream)]/70 shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
+        <div className="rounded-2xl border border-[color:var(--warm-pink)]/40 bg-[color:var(--cream)]/90 backdrop-blur supports-[backdrop-filter]:bg-[color:var(--cream)]/70 shadow-[0_10px_30px_rgba(231,184,198,0.1)]">
           <div className="flex items-center justify-between gap-4 px-5 py-3">
             <div className="flex items-center gap-3">
-              <div className="h-8 w-8 rounded-lg bg-[color:var(--pink)]/20" />
-
+              <img src={Logo} alt="Dear Me Stationery Logo" className="h-8 w-8 rounded-lg object-cover" />
               <span className="text-xl font-semibold tracking-wide" style={{color:'var(--charcoal)'}}>dear me stationery</span>
             </div>
             <nav className="hidden md:flex items-center gap-6 text-sm" style={{color:'var(--softgray)'}}>
               {navItems.map(item => (
-                <a key={item} href="#" className="transition-colors hover:text-[color:var(--charcoal)] hover:underline underline-offset-4">{item}</a>
+                <a key={item} href="#" className="transition-colors hover:text-[color:var(--dark-pink)] hover:underline underline-offset-4">{item}</a>
               ))}
             </nav>
-            <div className="flex items-center gap-4" style={{color:'var(--charcoal)'}}>
-              <button aria-label="Search" className="p-2 rounded-lg hover:bg-[color:var(--lavender)]/40 transition-colors">
+            <div className="flex items-center gap-4" style={{color:'var(--dark-pink)'}}>
+              <button aria-label="Search" className="p-2 rounded-lg hover:bg-[color:var(--light-pink)]/60 transition-colors">
                 <Icon name="search" />
               </button>
-              <button aria-label="Cart" className="p-2 rounded-lg hover:bg-[color:var(--lavender)]/40 transition-colors">
+              <button aria-label="Cart" className="p-2 rounded-lg hover:bg-[color:var(--light-pink)]/60 transition-colors">
                 <Icon name="cart" />
               </button>
-              <a aria-label="Instagram" href="https://www.instagram.com/shop.dearme/" target="_blank" rel="noreferrer" className="p-2 rounded-lg hover:bg-[color:var(--lavender)]/40 transition-colors">
+              <a aria-label="Instagram" href="https://www.instagram.com/shop.dearme/" target="_blank" rel="noreferrer" className="p-2 rounded-lg hover:bg-[color:var(--light-pink)]/60 transition-colors">
                 <Icon name="instagram" />
               </a>
             </div>

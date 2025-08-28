@@ -16,7 +16,7 @@ const Testimonials = () => {
   }, [])
   return (
     <section className="py-10">
-      <div className="rounded-2xl border border-[color:var(--lavender)]/50 bg-white p-6 sm:p-8 shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
+      <div className="rounded-2xl border border-[color:var(--warm-pink)]/50 bg-[color:var(--light-pink)]/10 p-6 sm:p-8 shadow-[0_10px_30px_rgba(231,184,198,0.1)]">
         <div className="flex items-center justify-between">
           <span className="text-pink-600">✦</span>
           <p className="text-center text-lg sm:text-xl" style={{color:'var(--charcoal)'}}>{quotes[i]}</p>
