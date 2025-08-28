@@ -26,7 +26,7 @@ const Navbar = () => {
               <img src={Logo} alt="Dear Me Stationery Logo" className="h-10 w-10 rounded-lg object-cover ring-2 ring-[color:var(--warm-pink)]/60" />
               <span className="text-xl font-semibold tracking-wide bg-gradient-to-r from-[color:var(--dark-pink)] to-[color:var(--warm-pink)] bg-clip-text text-transparent">dear me stationery</span>
             </div>
-            <nav className="hidden md:flex items-center gap-6 text-sm" style={{color:'var(--white)'}}>
+            <nav className="hidden md:flex items-center gap-6 text-sm" style={{color:'black'}}>
               {navItems.map(item => (
                 <a key={item} href="#" className="transition-all hover:text-[color:var(--dark-pink)] hover:scale-105 hover:font-medium">{item}</a>
               ))}
