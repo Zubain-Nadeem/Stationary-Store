@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --beige: #F5EDE3;
+  --beige: #F8F0E8;
   --cream: #FFF9F9;
   --lavender: #D8CBEF;
   --blue: #C6D9F7;
@@ -9,14 +9,33 @@
   --dark-pink: #D294A9;
   --light-pink: #F9E4EC;
   --warm-pink: #FFCCD5;
+  --soft-peach: #FFE5D9;
+  --warm-glow: #FFDAB9;
   --charcoal: #444444;
   --softgray: #777777;
   color-scheme: light;
 }
 
-html, body, #root { height: 100%; }
-body { background-color: var(--cream); color: var(--charcoal); }
+html, body, #root { height: 100%; min-height: 100vh; }
+body { 
+  background: linear-gradient(135deg, var(--cream) 0%, var(--soft-peach) 50%, var(--light-pink) 100%);
+  background-attachment: fixed;
+  color: var(--charcoal);
+}
 
 /* Typography */
-* { font-family: Poppins, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
-h1, h2, h3 { font-family: "Playfair Display", Poppins, ui-serif, Georgia, serif; }
+* { 
+  font-family: Poppins, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  letter-spacing: 0.01em;
+}
+h1, h2, h3 { 
+  font-family: "Playfair Display", Poppins, ui-serif, Georgia, serif;
+  letter-spacing: 0.02em;
+}
+
+/* Add a subtle warm glow to focused elements */
+:focus {
+  outline: 2px solid var(--warm-pink);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--light-pink);
+}
