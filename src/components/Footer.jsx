@@ -6,9 +6,9 @@ const Footer = () => (
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
         <div>
           <h3 className="font-semibold" style={{color:'var(--dark-pink)'}}>dear me stationery</h3>
-          <p className="mt-2 text-sm" style={{color:'var(--warm-pink)'}}>write your story beautifully</p>
+          <p className="mt-2 text-sm" style={{color:'black'}}>write your story beautifully</p>
         </div>
-        <nav className="text-sm flex flex-col gap-2" style={{color:'var(--warm-pink)'}}>
+        <nav className="text-sm flex flex-col gap-2" style={{color:'black'}}>
           <a href="#">About</a>
           <a href="#">FAQ</a>
           <a href="#">Contact</a>
