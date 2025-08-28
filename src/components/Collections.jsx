@@ -8,13 +8,13 @@ const cats = [
 ]
 
 const Collections = () => (
-  <section className="py-10">
-    <h2 className="text-2xl font-semibold mb-6" style={{color:'var(--dark-pink)'}}>Shop by Collection</h2>
+  <section className="py-6 sm:py-10">
+    <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6" style={{color:'var(--dark-pink)'}}>Shop by Collection</h2>
     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
       {cats.map(c => (
-        <a key={c.label} href="#" className={`flex items-center gap-3 rounded-2xl border border-[color:var(--warm-pink)]/40 ${c.color} px-4 py-4 shadow-[0_10px_30px_rgba(231,184,198,0.1)] hover:-translate-y-0.5 transition-transform hover:ring-1 hover:ring-[color:var(--dark-pink)]/60`}>
-          <span className="text-xl">{c.icon}</span>
-          <span style={{color:'var(--dark-pink)'}}>{c.label}</span>
+        <a key={c.label} href="#" className={`flex items-center gap-2 sm:gap-3 rounded-xl sm:rounded-2xl border border-[color:var(--warm-pink)]/40 ${c.color} px-3 sm:px-4 py-3 sm:py-4 shadow-[0_10px_30px_rgba(231,184,198,0.1)] hover:-translate-y-0.5 transition-transform hover:ring-1 hover:ring-[color:var(--dark-pink)]/60`}>
+          <span className="text-lg sm:text-xl">{c.icon}</span>
+          <span className="text-sm sm:text-base" style={{color:'var(--dark-pink)'}}>{c.label}</span>
         </a>
       ))}
     </div>

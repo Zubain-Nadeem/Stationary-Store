@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from "../assets/images/logo.jpg"
 
 const Icon = ({ name, className }) => {
@@ -12,11 +12,23 @@ const Icon = ({ name, className }) => {
   if (name === 'instagram') return (
     <svg className={`${common} ${className}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="5" ry="5" strokeWidth="1.5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" strokeWidth="1.5"></path><circle cx="17.5" cy="6.5" r="1.25" fill="currentColor"></circle></svg>
   );
+  if (name === 'menu') return (
+    <svg className={`${common} ${className}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+  );
+  if (name === 'close') return (
+    <svg className={`${common} ${className}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+  );
   return null;
 }
 
 const Navbar = () => {
   const navItems = ['Home','Shop','Bestsellers','Offers','Reviews','Contact']
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen)
+  }
+  
   return (
     <header className="sticky top-4 z-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -32,6 +44,13 @@ const Navbar = () => {
               ))}
             </nav>
             <div className="flex items-center gap-4" style={{color:'var(--dark-pink)'}}>
+              <button 
+                aria-label="Toggle mobile menu" 
+                className="md:hidden p-2 rounded-lg bg-[color:var(--light-pink)]/40 hover:bg-[color:var(--warm-pink)]/60 transition-all hover:scale-105 shadow-sm"
+                onClick={toggleMobileMenu}
+              >
+                <Icon name={mobileMenuOpen ? "close" : "menu"} />
+              </button>
               <button aria-label="Search" className="p-2 rounded-lg bg-[color:var(--light-pink)]/40 hover:bg-[color:var(--warm-pink)]/60 transition-all hover:scale-105 shadow-sm">
                 <Icon name="search" />
               </button>
@@ -44,6 +63,36 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+        
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden px-5 py-4 border-t border-[color:var(--warm-pink)]/30 bg-gradient-to-r from-[color:var(--light-pink)]/95 to-[color:var(--cream)]/95 backdrop-blur">
+            <nav className="flex flex-col items-start gap-4 text-sm" style={{color:'var(--dark-pink)'}}>
+              {navItems.map(item => (
+                <a 
+                  key={item} 
+                  href="#" 
+                  className="transition-all hover:text-[color:var(--dark-pink)] hover:translate-x-1 hover:font-medium w-full py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item}
+                </a>
+              ))}
+              <div className="flex items-center gap-3 pt-2 border-t border-[color:var(--warm-pink)]/30 w-full">
+                <span className="text-xs text-[color:var(--dark-pink)]/70">Follow us:</span>
+                <a 
+                  aria-label="Instagram" 
+                  href="https://www.instagram.com/shop.dearme/" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="p-2 rounded-lg bg-[color:var(--light-pink)]/40 hover:bg-[color:var(--warm-pink)]/60 transition-all hover:scale-105 shadow-sm"
+                >
+                  <Icon name="instagram" />
+                </a>
+              </div>
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   )
