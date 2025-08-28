@@ -30,34 +30,41 @@ const Navbar = () => {
   }
   
   return (
-    <header className="sticky top-4 z-50">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-2xl border border-[color:var(--warm-pink)]/60 bg-gradient-to-r from-[color:var(--light-pink)]/90 to-[color:var(--cream)]/90 backdrop-blur supports-[backdrop-filter]:bg-[color:var(--light-pink)]/70 shadow-[0_10px_30px_rgba(231,184,198,0.2)]">
-          <div className="flex items-center justify-between gap-4 px-5 py-3">
-            <div className="flex items-center gap-3">
-              <img src={Logo} alt="Dear Me Stationery Logo" className="h-10 w-10 rounded-lg object-cover ring-2 ring-[color:var(--warm-pink)]/60" />
-              <span className="text-xl font-semibold tracking-wide bg-gradient-to-r from-[color:var(--dark-pink)] to-[color:var(--warm-pink)] bg-clip-text text-transparent">dear me stationery</span>
+    <header className="sticky top-1 sm:top-4 z-50">
+      <div className="mx-auto max-w-7xl px-2 xs:px-4 sm:px-6 lg:px-8">
+        <div className="rounded-xl sm:rounded-2xl border border-[color:var(--warm-pink)]/60 bg-gradient-to-r from-[color:var(--light-pink)]/90 to-[color:var(--cream)]/90 backdrop-blur supports-[backdrop-filter]:bg-[color:var(--light-pink)]/70 shadow-[0_10px_30px_rgba(231,184,198,0.2)]">
+          <div className="flex items-center justify-between gap-2 xs:gap-4 sm:gap-6 px-3 xs:px-4 sm:px-5 py-2 xs:py-2.5 sm:py-3">
+            <div className="flex items-center gap-2 xs:gap-3 sm:gap-4">
+              <img src={Logo} alt="Dear Me Stationery Logo" className="h-7 w-7 xs:h-8 xs:w-8 sm:h-10 sm:w-10 rounded-lg object-cover ring-1 xs:ring-2 ring-[color:var(--warm-pink)]/60" />
+              <span className="text-base xs:text-lg sm:text-xl font-semibold tracking-wide bg-gradient-to-r from-[color:var(--dark-pink)] to-[color:var(--warm-pink)] bg-clip-text text-transparent truncate max-w-[110px] xs:max-w-[150px] sm:max-w-none">dear me stationery</span>
             </div>
             <nav className="hidden md:flex items-center gap-6 text-sm" style={{color:'black'}}>
               {navItems.map(item => (
                 <a key={item} href="#" className="transition-all hover:text-[color:var(--dark-pink)] hover:scale-105 hover:font-medium">{item}</a>
               ))}
             </nav>
-            <div className="flex items-center gap-4" style={{color:'var(--dark-pink)'}}>
+            <div className="flex items-center gap-2 xs:gap-3 sm:gap-4" style={{color:'var(--dark-pink)'}}>
               <button 
                 aria-label="Toggle mobile menu" 
-                className="md:hidden p-2 rounded-lg bg-[color:var(--light-pink)]/40 hover:bg-[color:var(--warm-pink)]/60 transition-all hover:scale-105 shadow-sm"
+                className="md:hidden p-1.5 xs:p-2 sm:p-2.5 rounded-lg bg-[color:var(--light-pink)]/40 hover:bg-[color:var(--warm-pink)]/60 transition-all hover:scale-105 shadow-sm"
                 onClick={toggleMobileMenu}
               >
                 <Icon name={mobileMenuOpen ? "close" : "menu"} />
               </button>
-              <button aria-label="Search" className="p-2 rounded-lg bg-[color:var(--light-pink)]/40 hover:bg-[color:var(--warm-pink)]/60 transition-all hover:scale-105 shadow-sm">
+              <button aria-label="Search" className="p-1.5 xs:p-2 sm:p-2.5 rounded-lg bg-[color:var(--light-pink)]/40 hover:bg-[color:var(--warm-pink)]/60 transition-all hover:scale-105 shadow-sm">
                 <Icon name="search" />
               </button>
-              <button aria-label="Cart" className="p-2 rounded-lg bg-[color:var(--light-pink)]/40 hover:bg-[color:var(--warm-pink)]/60 transition-all hover:scale-105 shadow-sm">
+              <button aria-label="Cart" className="p-1.5 xs:p-2 sm:p-2.5 rounded-lg bg-[color:var(--light-pink)]/40 hover:bg-[color:var(--warm-pink)]/60 transition-all hover:scale-105 shadow-sm">
                 <Icon name="cart" />
               </button>
-              <a aria-label="Instagram" href="https://www.instagram.com/shop.dearme/" target="_blank" rel="noreferrer" className="p-2 rounded-lg bg-[color:var(--light-pink)]/40 hover:bg-[color:var(--warm-pink)]/60 transition-all hover:scale-105 shadow-sm">
+              {/* Instagram button - hidden on mobile, visible on medium screens and up */}
+              <a 
+                aria-label="Instagram" 
+                href="https://www.instagram.com/shop.dearme/" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="hidden md:block p-1.5 xs:p-2 sm:p-2.5 rounded-lg bg-[color:var(--light-pink)]/40 hover:bg-[color:var(--warm-pink)]/60 transition-all hover:scale-105 shadow-sm"
+              >
                 <Icon name="instagram" />
               </a>
             </div>
@@ -66,26 +73,26 @@ const Navbar = () => {
         
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden px-5 py-4 border-t border-[color:var(--warm-pink)]/30 bg-gradient-to-r from-[color:var(--light-pink)]/95 to-[color:var(--cream)]/95 backdrop-blur">
-            <nav className="flex flex-col items-start gap-4 text-sm" style={{color:'var(--dark-pink)'}}>
+          <div className="md:hidden px-3 xs:px-4 py-2 xs:py-3 mt-1.5 rounded-xl border border-[color:var(--warm-pink)]/30 bg-gradient-to-r from-[color:var(--light-pink)]/95 to-[color:var(--cream)]/95 backdrop-blur shadow-md">
+            <nav className="flex flex-col items-start gap-3 xs:gap-4 text-sm" style={{color:'var(--dark-pink)'}}>
               {navItems.map(item => (
                 <a 
                   key={item} 
                   href="#" 
-                  className="transition-all hover:text-[color:var(--dark-pink)] hover:translate-x-1 hover:font-medium w-full py-2"
+                  className="transition-all hover:text-[color:var(--dark-pink)] hover:translate-x-1 hover:font-medium w-full py-1.5 xs:py-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item}
                 </a>
               ))}
-              <div className="flex items-center gap-3 pt-2 border-t border-[color:var(--warm-pink)]/30 w-full">
+              <div className="flex items-center gap-3 pt-3 mt-1 border-t border-[color:var(--warm-pink)]/30 w-full">
                 <span className="text-xs text-[color:var(--dark-pink)]/70">Follow us:</span>
                 <a 
                   aria-label="Instagram" 
                   href="https://www.instagram.com/shop.dearme/" 
                   target="_blank" 
                   rel="noreferrer" 
-                  className="p-2 rounded-lg bg-[color:var(--light-pink)]/40 hover:bg-[color:var(--warm-pink)]/60 transition-all hover:scale-105 shadow-sm"
+                  className="p-1.5 rounded-lg bg-[color:var(--light-pink)]/40 hover:bg-[color:var(--warm-pink)]/60 transition-all hover:scale-105 shadow-sm"
                 >
                   <Icon name="instagram" />
                 </a>
